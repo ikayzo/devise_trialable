@@ -1,0 +1,4 @@
+= DeviseTrialable
+{<img src="https://travis-ci.org/scambra/devise_invitable.png"/>}[http://travis-ci.org/scambra/devise_invitable]
+
+It adds support to devise[http://github.com/plataformatec/devise] set a trial period before enrolling

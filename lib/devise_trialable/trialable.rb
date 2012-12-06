@@ -60,7 +60,7 @@ module Devise
       end
 
       def trial_days_left_words
-        I18n.t('trial.days_left') % self.trial_days_left
+        I18n.t('trial.days_left') % [self.trial_days_left, Rails.application.class.parent_name]
       end
       protected
 

@@ -56,7 +56,7 @@ module Devise
       end
 
       def trial_days_left
-        (self.class.trial_period.to_i - (DateTime.now - self.created_at).to_i)/1.day
+        (self.class.trial_period.to_i - (DateTime.now.utc.to_time - self.created_at.utc.to_time).to_i)/1.day
       end
 
       protected

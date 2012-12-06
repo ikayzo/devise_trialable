@@ -55,6 +55,10 @@ module Devise
         !enrolled? ? :unenrolled : super
       end
 
+      def trial_days_left
+        (self.class.trial_period.to_i - (DateTime.now - self.created_at).to_i)/1.day
+      end
+
       protected
 
         # Callback to overwrite if confirmation is required or not.

@@ -59,6 +59,9 @@ module Devise
         (self.class.trial_period.to_i - (DateTime.now.utc.to_time - self.created_at.utc.to_time).to_i)/1.day
       end
 
+      def trial_days_left_words
+        I18n.t('trial.days_left') % self.trial_days_left
+      end
       protected
 
         # Callback to overwrite if confirmation is required or not.

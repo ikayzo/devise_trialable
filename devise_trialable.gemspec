@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version      = DeviseTrialable::VERSION
   s.platform     = Gem::Platform::RUBY
   s.authors      = ["Timothy Little"]
-  s.email        = ["timothy@ikayzo"]
+  s.email        = ["timothy@ikayzo.com"]
   s.homepage     = "https://github.com/ikayzo/devise_trialable"
   s.summary      = "A trial period strategy for Devise"
   s.description  = "It allows setting a trial period to allow access to site until enrolled with billing information"

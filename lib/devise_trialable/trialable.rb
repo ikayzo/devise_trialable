@@ -52,7 +52,7 @@ module Devise
 
       # The message to be shown if the account is inactive.
       def inactive_message
-        !enrolled? ? :unenrolled : super
+        !enrolled? && !trial_period_valid? ? :unenrolled : super
       end
 
       def trial_days_left

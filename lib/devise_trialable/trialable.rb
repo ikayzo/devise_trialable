@@ -33,7 +33,7 @@ module Devise
       # add errors
       def enroll!
         pending_any_enrollment do
-          self.enrolled_at = Time.now.utc
+          self.update_attribute(:enrolled_at, Time.now.utc)
         end
       end
 

@@ -65,7 +65,7 @@ module Devise
 
       def in_trial_period?
         return true if self.created_at.blank?
-        (self.created_at + 60.days).end_of_day >=  Date.today.end_of_day
+        trial_period_valid?
       end
 
       protected

@@ -62,6 +62,12 @@ module Devise
       def trial_days_left_words
         I18n.t('trial.days_left') % [self.trial_days_left, Rails.application.class.parent_name]
       end
+
+      def in_trial_period?
+        return true if self.created_at.blank?
+        (self.created_at + 60.days).end_of_day >=  Date.today.end_of_day
+      end
+
       protected
 
         # Callback to overwrite if confirmation is required or not.

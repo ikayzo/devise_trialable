@@ -70,7 +70,6 @@ module Devise
 
       protected
 
-        # Callback to overwrite if confirmation is required or not.
         def enrollment_required?
           !enrolled?
         end
@@ -94,8 +93,12 @@ module Devise
         #   # trial_period = 0.days
         #   trial_period_valid?   # will always return false
         #
+        #   # trial_period = 60.days and created_at last week, but
+        #   user has enrolled
+        #   trial_period_valid?   # will always return false
+        #
         def trial_period_valid?
-          self.created_at >= self.class.trial_period.ago
+          self.created_at >= self.class.trial_period.ago && !self.enrolled?
         end
 
         # Checks whether the record requires any confirmation.
